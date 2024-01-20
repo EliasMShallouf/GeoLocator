@@ -1,0 +1,38 @@
+<div class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-light text-black" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-start">
+              <div class="mb-md-5 mt-md-4 pb-5">
+                <h2 class="fw-bold mb-2 text-uppercase">GeoLocator App</h2>
+                <p class="text-black-50 mb-5">All you need to find the geo location data for an address</p>
+  
+                <form [formGroup]="addressForm" (ngSubmit)="findAddress()">
+                  <div class="form-group form-outline form-black mb-4">
+                    <label class="form-label" for="userEmail">Email</label>
+                    <input formControlName="userEmail" type="email" name="userEmail" id="userEmail" class="form-control form-control-lg" />
+                    <div class="alert alert-danger" *ngIf="(userEmail.touched) && (userEmail.invalid)" style="margin-top: 5px;">  
+                      <span>Email not valid!</span>
+                    </div>
+                  </div>
+    
+                  <div class="form-group form-outline form-black mb-4">
+                    <label class="form-label" for="addressIP">Address</label>
+                    <input required formControlName="addressIP" type="text" name="addressIP" id="addressIP" class="form-control form-control-lg" />
+                    <div class="alert alert-danger" *ngIf="(addressIP.touched) && (addressIP.invalid)" style="margin-top: 5px;">  
+                      <span>Address IP not valid!</span>
+                    </div>
+                  </div>
+    
+                  <br />
+    
+                  <button class="btn btn-dark btn-lg px-8" type="submit" [disabled]="!addressForm.valid">Find Address Information</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-light text-black" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-start">
+              <div class="mb-md-5 mt-md-4 pb-5">
+                <div (click)="goBack()" style="cursor: pointer;"><span><i class="fas fa-arrow-left"></i></span> Back</div>
+                <br/>
+                <h2 class="fw-bold mb-2 text-uppercase">{{ address.ip }}</h2>
+                <p class="text-black-50 mb-5">This is the geo location results information for the address</p>
+                <ul class="list-group">
+                    <li class="list-group-item"><b>Country</b><br/>{{ address.country }}</li>
+                    <li class="list-group-item"><b>Country Code</b><br/>{{ address.countryCode }}</li>
+                    <li class="list-group-item"><b>City</b><br/>{{ address.city }}</li>
+                    <li class="list-group-item"><b>Location</b><br/>({{ address.lat }}, {{ address.lon }})</li>
+                </ul>
+                <br/>
+                <button class="btn btn-dark btn-lg px-8" *ngIf="isEmailValid()" (click)="sendResultsViaEmail()">Send Results Via Email</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p-toast position="bottom-center" key="toast"></p-toast>
+</div>
