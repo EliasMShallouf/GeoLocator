@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "0e0cfad4-c910-4f9c-add6-b4d1b3d6d217",
+		"name": "GeoLocator API Endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "address geo location",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ip\": \"188.133.3.27\",\r\n    \"country\": \"Syria\",\r\n    \"countryCode\": \"SY\",\r\n    \"city\": \"Damascus\",\r\n    \"lat\": 33.5102,\r\n    \"lon\": 36.2913\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/send-results-via-email/elias.m.shallouf@gmail.com",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"send-results-via-email",
+						"elias.m.shallouf@gmail.com"
+					]
+				},
+				"description": "get ip address geo location info"
+			},
+			"response": []
+		},
+		{
+			"name": "send via email",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				},
+				"description": "send result address via email"
+			},
+			"response": []
+		}
+	]
+}
