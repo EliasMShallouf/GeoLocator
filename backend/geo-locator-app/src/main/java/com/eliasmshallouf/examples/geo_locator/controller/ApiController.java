@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/")
+@CrossOrigin("http://localhost:4200") //only allow angular app to connect to the backend
 public class ApiController {
     @Autowired
     private AddressRepository addressRepository;
